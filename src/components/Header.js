@@ -1,13 +1,16 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 
-import './css/header.css';
+import logo from '../imgs/logo.png';
+import basket from '../imgs/basket.png';
+
+import '../css/header.css';
 
 const Header = () => {
 	return (
     <header>
-      <img alt="logo" />
+      <img className="header-logo" src={logo} alt="logo" />
       <h1>Quality Trainers with the best prices, guaranteed!</h1>
-      <img alt="basket" />
+      <img className="header-basket" src={basket} alt="basket" />
     </header>
 	);
 };

@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  min-width: 320px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+section {
+  margin-top: 5em;
+  /*margin-left: 12em;*/
+  padding: 3em 2em;
+}
+
+h1 {
+  font-size: 1em;
+  margin: 0;
+}

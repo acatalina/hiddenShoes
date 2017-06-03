@@ -9,13 +9,24 @@ import Menu from './Menu'; // eslint-disable-line no-unused-vars
 import DATA from '../../DATA';
 import history from '../history';
 
+import '../css/app.css';
+
 class App extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			toggledMenu: false
+		};
+
+		this.toggleMenu = this.toggleMenu.bind(this);
+	}
 	render() {
 		return (
 			<Router history={history}>
 				<main>
 					<Header />
-					<Menu />
+					<Menu toggled={this.state.toggledMenu} toggleMenu={this.toggleMenu}/>
 					<Switch>
 						<Route exact path="/" render={() => <SalesPage data={DATA} />} />
 						<Route path="/shoes/:id" render={() => <ProductPage data={DATA} />} />
@@ -24,6 +35,13 @@ class App extends Component {
 				</main>
 			</Router>
 		);
+	}
+	toggleMenu() {
+		this.setState((prevState) => {
+			return {
+				toggledMenu: !prevState.toggledMenu
+			};
+		});
 	}
 }
 
