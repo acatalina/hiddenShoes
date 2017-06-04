@@ -1,0 +1,26 @@
+.filter-list {
+  list-style: none;
+  padding: .5em 1em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #f3f3f3;
+  border: .05em solid #333;
+}
+
+.filter-list li {
+  width: 50%;
+}
+
+@media (min-width: 472px) {
+  .filter-list li {
+    width: initial;
+    margin-right: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  .filter-list li {
+    margin-right: 3em;
+  }
+}
