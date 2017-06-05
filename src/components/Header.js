@@ -7,11 +7,13 @@ import '../css/header.css';
 
 const Header = () => {
 	return (
-    <header>
-      <img className="header-logo" src={logo} alt="logo" />
-      <h1>Quality Trainers with the best prices, guaranteed!</h1>
-      <img className="header-basket" src={basket} alt="basket" />
-    </header>
+		<header>
+			<div className="header">
+				<img className="header-logo" src={logo} alt="logo" />
+				<h1>Quality Trainers with the best prices, guaranteed!</h1>
+				<img className="header-basket" src={basket} alt="basket" />
+			</div>
+		</header>
 	);
 };
 
