@@ -1,5 +1,5 @@
 /* global describe, it */
-import {expect} from 'chai';
+import { expect } from 'chai';
 
 import * as helpers from '../src/lib/helpers';
 
@@ -9,7 +9,7 @@ describe('Helpers', () => {
 			const array = [1, 2];
 			const arraySec = [1];
 			const actual = helpers.oneElemMatch(array, arraySec);
-      
+
 			expect(actual).to.be.true;
 		});
 
@@ -17,7 +17,7 @@ describe('Helpers', () => {
 			const array = [1, 2];
 			const arraySec = [3];
 			const actual = helpers.oneElemMatch(array, arraySec);
-      
+
 			expect(actual).to.be.false;
 		});
 	});
@@ -25,8 +25,8 @@ describe('Helpers', () => {
 	describe('filterByColour', () => {
 		const colours = ['black'];
 		const data = [
-      {available: {black: 1, blue: 1}},
-      {available: {red: 1}}
+			{ colours: ['black', 'blue'] },
+			{ colours: ['red'] }
 		];
 
 		it('returns all products if colours array is empty', () => {
@@ -37,9 +37,25 @@ describe('Helpers', () => {
 
 		it('returns a new array with the filtered products', () => {
 			const actual = helpers.filterByColour(data, colours);
-			const expected = [{available: {black: 1, blue: 1}}];
+			const expected = [{ colours: ['black', 'blue'] }];
 
 			expect(actual).to.eql(expected);
+		});
+	});
+
+	describe('createNumbersArray', () => {
+		it('creates an array with numbers in ascending order from 1 to the number given', () => {
+			const actual = helpers.createNumbersArray(2);
+			const expected = [1, 2];
+
+			expect(actual).to.eql(expected);
+		});
+
+		it('returns an empty array when no number or empty parameters are given', () => {
+			expect(helpers.createNumbersArray()).to.eql([]);
+			expect(helpers.createNumbersArray('nonsense')).to.eql([]);
+			expect(helpers.createNumbersArray(NaN)).to.eql([]);
+			expect(helpers.createNumbersArray([1])).to.eql([]);
 		});
 	});
 });
