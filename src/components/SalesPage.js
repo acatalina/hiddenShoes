@@ -20,11 +20,13 @@ class SalesPage extends Component {
 	render() {
 		return (
 			<section>
-				<h1>SALE TRAINERS</h1>
-				<Filter setFilter={this.setFilter} />
-				<ul className="product-list">
-					{this.generateProducts(this.props.data, this.state.filterBy)}
-				</ul>
+				<div className="container">
+					<h1>SALE TRAINERS</h1>
+					<Filter setFilter={this.setFilter} />
+					<ul className="product-list">
+						{this.generateProducts(this.props.data, this.state.filterBy)}
+					</ul>
+				</div>
 			</section>
 		);
 	}
@@ -33,7 +35,7 @@ class SalesPage extends Component {
 
 		return filteredProducts.map((product, i) => {
 			return (
-				<ProductCard 
+				<ProductCard
 					key={i}
 					id={product.id}
 					name={product.name}
@@ -49,14 +51,14 @@ class SalesPage extends Component {
 			this.setState((prevState) => {
 				let newFilter = prevState.filterBy.slice();
 				newFilter.push(newColour);
-				
-				return {filterBy: newFilter};
+
+				return { filterBy: newFilter };
 			});
 		} else {
 			this.setState((prevState) => {
 				let newFilter = prevState.filterBy.filter(colour => newColour !== colour);
 
-				return {filterBy: newFilter};
+				return { filterBy: newFilter };
 			});
 		}
 	}
