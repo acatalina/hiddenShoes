@@ -3,7 +3,7 @@ const colours = {
 	white: [1, 2, 4, 7, 8, 9, 10],
 	red: [2, 5, 6, 9],
 	blue: [1, 3, 10],
-	available: ['black', 'white', 'red', 'blue']
+	colours: ['black', 'white', 'red', 'blue']
 };
 
 const shoes = [
@@ -14,6 +14,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Nulla vitae elit libero, a pharetra augue.',
+		colours: [],
 		available: {}
 	},
 	{
@@ -23,6 +24,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Sed posuere consectetur est at lobortis.',
+		colours: [],
 		available: {}
 	},
 	{
@@ -32,6 +34,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
+		colours: [],
 		available: {}
 	},
 	{
@@ -41,6 +44,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
+		colours: [],
 		available: {}
 	},
 	{
@@ -50,6 +54,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Donec sed odio dui.',
+		colours: [],
 		available: {}
 	},
 	{
@@ -59,6 +64,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Cras mattis consectetur purus sit amet fermentum.',
+		colours: [],
 		available: {}
 	},
 	{
@@ -68,6 +74,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Nulla vitae elit libero, a pharetra augue.',
+		colours: [],
 		available: {}
 	},
 	{
@@ -77,6 +84,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Aenean lacinia bibendum nulla sed consectetur.',
+		colours: [],
 		available: {}
 	},
 	{
@@ -86,6 +94,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Sed posuere consectetur est at lobortis.',
+		colours: [],
 		available: {}
 	},
 	{
@@ -95,13 +104,14 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros.',
+		colours: [],
 		available: {}
 	}
 ];
 
-colours.available.forEach(colour => {
+colours.colours.forEach(colour => {
 	colours[colour].forEach(index => {
-		shoes[index - 1].available[colour] = {
+		shoes[index - 1].available = {
 			'4.5': 8,
 			5: 8,
 			'5.5': 8,
@@ -115,6 +125,7 @@ colours.available.forEach(colour => {
 			13: 8,
 			14: 8
 		};
+		shoes[index - 1].colours.push(colour);
 	});
 });
 
