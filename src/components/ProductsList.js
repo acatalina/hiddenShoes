@@ -29,13 +29,7 @@ const generateProducts = products => {
 };
 
 ProductsList.propTypes = {
-	product: PropTypes.shape({
-		id: PropTypes.string.isRequired,
-		name: PropTypes.string.isRequired,
-		img: PropTypes.string,
-		were: PropTypes.number,
-		price: PropTypes.number.isRequired
-	})
+	data: PropTypes.array.isRequired,
 };
 
 export default ProductsList;

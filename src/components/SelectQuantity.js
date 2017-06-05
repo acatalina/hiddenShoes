@@ -1,9 +1,9 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
-// import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 
 import { createNumbersArray } from '../lib/helpers';
 
-const SelectColour = props => {
+const SelectQuantity = props => {
 	let quantity = 0;
 
 	if (props.stock) {
@@ -33,4 +33,11 @@ const SelectColour = props => {
 	);
 };
 
-export default SelectColour;
+SelectQuantity.propTypes = {
+	stock: PropTypes.object.isRequired,
+	sizeSelected: PropTypes.number.isRequired,
+	selectQuantity: PropTypes.func.isRequired,
+	quantitySelected: PropTypes.number.isRequired
+};
+
+export default SelectQuantity;

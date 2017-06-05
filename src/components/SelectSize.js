@@ -1,7 +1,7 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
-// import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 
-const SelectColour = props => {
+const SelectSize = props => {
 	const stock = props.stock || [];
 
 	let sizes = Object.keys(stock);
@@ -28,4 +28,10 @@ const SelectColour = props => {
 	);
 };
 
-export default SelectColour;
+SelectSize.propTypes = {
+	stock: PropTypes.object.isRequired,
+	selectSize: PropTypes.func.isRequired,
+	sizeSelected: PropTypes.number.isRequired
+};
+
+export default SelectSize;

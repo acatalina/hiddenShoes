@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import { withRouter } from 'react-router-dom'; // eslint-disable-line no-unused-vars
 import { findProductById, findRelatedProductsByColour } from '../lib/helpers';
+import { PropTypes } from 'prop-types';
 
 import ProductBox from './ProductBox'; // eslint-disable-line no-unused-vars
 import LineThrough from './LineThrough'; // eslint-disable-line no-unused-vars
@@ -56,5 +57,14 @@ class ProductPage extends Component {
 		});
 	}
 }
+
+ProductPage.propTypes = {
+	data: PropTypes.array.isRequired,
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			id: PropTypes.string.isRequired
+		})
+	})
+};
 
 export default withRouter(ProductPage);
