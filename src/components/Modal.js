@@ -33,6 +33,7 @@ const Modal = props => {
 
 Modal.propTypes = {
 	isOpen: PropTypes.bool.isRequired,
+	close: PropTypes.func.isRequired,
 	img: PropTypes.string.isRequired,
 	alt: PropTypes.string
 };
