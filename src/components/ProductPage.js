@@ -26,9 +26,9 @@ class ProductPage extends Component {
 			<section>
 				<div className="container">
 					<ProductBox data={findProductById(id, data)} 
-						sizeSelected={this.state.sizeSelected}
+						sizeSelected={+this.state.sizeSelected}
 						selectSize={this.selectSize}
-						quantitySelected={this.state.quantitySelected}
+						quantitySelected={+this.state.quantitySelected}
 						selectQuantity={this.selectQuantity}
 					/>
 					<LineThrough />
