@@ -2,5 +2,10 @@
   padding: 0;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+}
+
+@media (min-width: 472px) {
+  .product-list {
+    margin: 0 -1em;
+  }
 }
