@@ -26,8 +26,26 @@ const createNumbersArray = maxNum => {
 	return result;
 };
 
+const findProductById = (id, data) => {
+	if (!id || !Array.isArray(data) || !data.length) return {};
+
+	return data.filter(product => product.id === +id)[0];
+};
+
+const findRelatedProductsByColour = (id, data) => {
+	const mainProduct = findProductById(id, data);
+
+	return data.filter(product => {
+		if (product.id === +id) return false;
+
+		return oneElemMatch(product.colours, mainProduct.colours);
+	}).slice(0, 4);
+};
+
 module.exports = {
 	filterByColour,
 	oneElemMatch,
-	createNumbersArray
+	createNumbersArray,
+	findProductById,
+	findRelatedProductsByColour
 };

@@ -58,4 +58,47 @@ describe('Helpers', () => {
 			expect(helpers.createNumbersArray([1])).to.eql([]);
 		});
 	});
+
+	describe('findProductById', () => {
+		it('finds and return an object with matching id from an array of objects', () => {
+			const array = [{id: 2}, {id: 3}];
+			const actual = helpers.findProductById(2, array);
+			const expected = {id: 2};
+			
+			expect(actual).to.eql(expected);
+		});
+
+		it('handles invalid inputs', () => {
+			expect(helpers.findProductById()).to.eql({});
+			expect(helpers.findProductById(1, {})).to.eql({});
+			expect(helpers.findProductById(1, [])).to.eql({});
+			expect(helpers.findProductById(NaN, [])).to.eql({});
+		});
+	});
+
+	describe('findRelatedProductsByColour', () => {
+		it('filters an array of objects returning objects with matching colours from the id given', () => {
+			const array = [
+				{id: 1, colours: ['black', 'red']}, 
+				{id: 2, colours: ['black']}, 
+				{id: 3, colours: ['blue']}
+			];
+			const actual = helpers.findRelatedProductsByColour(1, array);
+			const expected = [{id: 2, colours: ['black']}];
+
+			expect(actual).to.eql(expected);
+		});
+
+		it('returns an empty array if there is no matches', () => {
+			const array = [
+				{id: 1, colours: ['black', 'red']}, 
+				{id: 2, colours: ['blue']}, 
+				{id: 3, colours: ['blue']}
+			];
+			const actual = helpers.findRelatedProductsByColour(1, array);
+			const expected = [];
+
+			expect(actual).to.eql(expected);
+		});
+	});
 });
