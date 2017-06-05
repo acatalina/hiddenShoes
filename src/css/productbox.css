@@ -10,9 +10,12 @@
 	align-items: center;
 	border: .05em solid #333;
 	padding: 2em;
+	cursor: pointer;
 }
 
-.product-box-img { width: 100%; }
+.product-box-img { 
+	width: 100%;
+}
 
 .product-box-details {
 	display: flex;
