@@ -24,16 +24,17 @@ class ProductBox extends Component {
 		return (
 			<article className="product-box">
 				<div className="product-box-wrapper">
-					<div className="product-box-img-wrapper">
-						<Modal isOpen={this.state.isModalOpen}
-							close={this.modalHandler}
-							img={`/imgs/${data.img}`}
-							altImg={data.name} />
-						<img onClick={this.modalHandler}
-							className="product-box-img"
+					<div className="product-box-img-wrapper"
+						onClick={this.modalHandler}>
+						<img className="product-box-img"
 							src={`/imgs/${data.img}`}
 							alt={data.name} />
 					</div>
+					<Modal 
+						isOpen={this.state.isModalOpen}
+						close={this.modalHandler}
+						img={`/imgs/${data.img}`}
+						altImg={data.name} />
 					<div className="product-box-details">
 						<h1>{data.name}</h1>
 						<p>{data.description}</p>
