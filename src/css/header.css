@@ -4,6 +4,7 @@ header {
   z-index: 2;
   padding: 1em .5em;
   background-color: #D7D7D7;
+  align-items: center;
 }
 
 .header {
