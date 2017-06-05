@@ -24,14 +24,16 @@ class App extends Component {
 	render() {
 		return (
 			<Router history={history}>
-				<main>
+				<main className="main-wrapper">
 					<Header />
-					<Menu toggled={this.state.toggledMenu} toggleMenu={this.toggleMenu}/>
-					<Switch>
-						<Route exact path="/" render={() => <SalesPage data={DATA} />} />
-						<Route path="/shoes/:id" render={() => <ProductPage data={DATA} />} />
-						<Redirect from="*" to="/" />
-					</Switch>
+					<div className="content-wrapper">
+						<Menu toggled={this.state.toggledMenu} toggleMenu={this.toggleMenu}/>
+						<Switch>
+							<Route exact path="/" render={() => <SalesPage data={DATA} />} />
+							<Route path="/shoes/:id" render={() => <ProductPage data={DATA} />} />
+							<Redirect from="*" to="/" />
+						</Switch>
+					</div>
 				</main>
 			</Router>
 		);

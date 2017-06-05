@@ -6,18 +6,50 @@ html {
   min-width: 320px;
 }
 
+html,
+body,
+#root {
+	height: 100%;
+}
+
 body {
   margin: 0;
   font-family: Arial;
 }
 
 section {
-  margin-top: 5em;
-  /*margin-left: 12em;*/
   padding: 3em 2em;
+  flex-grow: 1;
+	overflow: auto;
 }
 
 h1 {
   font-size: 1em;
   margin: 0;
+}
+
+h2 {
+	margin: 0;
+}
+
+.main-wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.content-wrapper {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	position: relative;
+}
+
+@media (min-width: 1224px) {
+	.container {
+		width: 100%;
+		height: 100%;
+		max-width: 1224px;
+		margin: 0 auto;
+	}
 }
