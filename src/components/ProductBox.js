@@ -109,7 +109,7 @@ class ProductBox extends Component {
 
 ProductBox.propTypes = {
 	data: PropTypes.shape({
-		id: PropTypes.number.isRequired,
+		id: PropTypes.string.isRequired,
 		name: PropTypes.string.isRequired,
 		description: PropTypes.string.isRequired,
 		img: PropTypes.string.isRequired,

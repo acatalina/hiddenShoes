@@ -31,7 +31,7 @@ const ProductCard = props => {
 };
 
 ProductCard.propTypes = {
-	id: PropTypes.number.isRequired,
+	id: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	img: PropTypes.string.isRequired,
 	were: PropTypes.number,

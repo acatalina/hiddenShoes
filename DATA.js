@@ -8,7 +8,7 @@ const colours = {
 
 const shoes = [
 	{
-		id: 1,
+		id: '1',
 		name: 'Trainers 1',
 		img: 'trainer1.jpg',
 		were: 26.99,
@@ -18,7 +18,7 @@ const shoes = [
 		available: {}
 	},
 	{
-		id: 2,
+		id: '2',
 		name: 'Trainers 2',
 		img: 'trainer2.jpg',
 		were: 26.99,
@@ -28,7 +28,7 @@ const shoes = [
 		available: {}
 	},
 	{
-		id: 3,
+		id: '3',
 		name: 'Trainers 3',
 		img: 'trainer3.jpg',
 		were: 26.99,
@@ -38,7 +38,7 @@ const shoes = [
 		available: {}
 	},
 	{
-		id: 4,
+		id: '4',
 		name: 'Trainers 4',
 		img: 'trainer4.jpg',
 		were: 26.99,
@@ -48,7 +48,7 @@ const shoes = [
 		available: {}
 	},
 	{
-		id: 5,
+		id: '5',
 		name: 'Trainers 5',
 		img: 'trainer5.jpg',
 		were: 26.99,
@@ -58,7 +58,7 @@ const shoes = [
 		available: {}
 	},
 	{
-		id: 6,
+		id: '6',
 		name: 'Trainers 6',
 		img: 'trainer6.jpg',
 		were: 26.99,
@@ -68,7 +68,7 @@ const shoes = [
 		available: {}
 	},
 	{
-		id: 7,
+		id: '7',
 		name: 'Trainers 7',
 		img: 'trainer7.jpg',
 		were: 26.99,
@@ -78,7 +78,7 @@ const shoes = [
 		available: {}
 	},
 	{
-		id: 8,
+		id: '8',
 		name: 'Trainers 8',
 		img: 'trainer8.jpg',
 		were: 26.99,
@@ -88,7 +88,7 @@ const shoes = [
 		available: {}
 	},
 	{
-		id: 9,
+		id: '9',
 		name: 'Trainers 9',
 		img: 'trainer9.jpg',
 		were: 26.99,
@@ -98,7 +98,7 @@ const shoes = [
 		available: {}
 	},
 	{
-		id: 10,
+		id: '10',
 		name: 'Trainers 10',
 		img: 'trainer10.jpg',
 		were: 26.99,
