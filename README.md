@@ -2,9 +2,7 @@
 
 Kixstand (Hidden Shoes) is a basic shoe shop developed as part of a technical test.
 
-You can see the shoes available in the store, filter them by colours, navigate into a product page and see more information regarding the particular product including description, sizes available, quantity available to order and related products match by colour.
-
-You can visit the end project [here](https://acatalina.github.io/hiddenshoes)
+You can see the shoes available in the store, filter them by colours, navigate into a product page and see more information regarding the particular product including description, bigger image by clicking on it, sizes available, quantity available and related products matched by colour.
 
 ## Getting started
 
