@@ -5,19 +5,19 @@ import ProductCard from './ProductCard'; // eslint-disable-line no-unused-vars
 
 import '../css/productlist.css';
 
-const ProductsList = props => {
+const ProductsList = ({ data }) => {
 	return (
 		<ul className="product-list">
-			{generateProducts(props.data)}
+			{generateProducts(data)}
 		</ul>
 	);
 };
 
 const generateProducts = products => {
-	return products.map((product, i) => {
+	return products.map(product => {
 		return (
 			<ProductCard
-				key={i}
+				key={product.id}
 				id={product.id}
 				name={product.name}
 				img={product.img}
