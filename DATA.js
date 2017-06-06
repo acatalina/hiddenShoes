@@ -1,11 +1,3 @@
-const colours = {
-	black: [1, 2, 4, 5, 7],
-	white: [1, 2, 4, 7, 8, 9, 10],
-	red: [2, 5, 6, 9],
-	blue: [1, 3, 10],
-	colours: ['black', 'white', 'red', 'blue']
-};
-
 const shoes = [
 	{
 		id: '1',
@@ -14,7 +6,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Nulla vitae elit libero, a pharetra augue.',
-		colours: [],
+		colours: ['black', 'white', 'blue'],
 		available: {}
 	},
 	{
@@ -24,7 +16,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Sed posuere consectetur est at lobortis.',
-		colours: [],
+		colours: ['black', 'white', 'red'],
 		available: {}
 	},
 	{
@@ -34,7 +26,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-		colours: [],
+		colours: ['blue'],
 		available: {}
 	},
 	{
@@ -54,7 +46,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Donec sed odio dui.',
-		colours: [],
+		colours: ['black', 'white'],
 		available: {}
 	},
 	{
@@ -64,7 +56,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Cras mattis consectetur purus sit amet fermentum.',
-		colours: [],
+		colours: ['red'],
 		available: {}
 	},
 	{
@@ -74,7 +66,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Nulla vitae elit libero, a pharetra augue.',
-		colours: [],
+		colours: ['black', 'white'],
 		available: {}
 	},
 	{
@@ -84,7 +76,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Aenean lacinia bibendum nulla sed consectetur.',
-		colours: [],
+		colours: ['white'],
 		available: {}
 	},
 	{
@@ -94,7 +86,7 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Sed posuere consectetur est at lobortis.',
-		colours: [],
+		colours: ['white', 'red'],
 		available: {}
 	},
 	{
@@ -104,29 +96,26 @@ const shoes = [
 		were: 26.99,
 		price: 14.99,
 		description: 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros.',
-		colours: [],
+		colours: ['white'],
 		available: {}
 	}
 ];
 
-colours.colours.forEach(colour => {
-	colours[colour].forEach(index => {
-		shoes[index - 1].available = {
-			'4.5': 8,
-			5: 8,
-			'5.5': 8,
-			6: 8, 
-			7: 8,
-			8: 8,
-			9: 8,
-			10: 8,
-			11: 8,
-			12: 8,
-			13: 8,
-			14: 8
-		};
-		shoes[index - 1].colours.push(colour);
-	});
+shoes.forEach(shoe => {
+	shoe.available = {
+		'4.5': 8,
+		5: 8,
+		'5.5': 8,
+		6: 8,
+		7: 8,
+		8: 8,
+		9: 8,
+		10: 8,
+		11: 8,
+		12: 8,
+		13: 8,
+		14: 8
+	};
 });
 
 export default shoes;
