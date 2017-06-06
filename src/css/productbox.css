@@ -65,12 +65,13 @@
 .product-box-form input {
 	background-color: #169BD5;
 	color: #fff;
-	border: 0;
+	border: 1px solid transparent;
 	margin-bottom: 0;
 	font-weight: 900;
 	padding: 1em;
 	outline: 0;
 	margin-top: 2em;
+	transition: all .2s ease-in-out;
 }
 
 @media (min-width: 768px) {
@@ -91,6 +92,12 @@
 		display: flex;
 		flex-flow: column;
 		justify-content: flex-end
+	}
+
+	.product-box-form input:hover {
+		background-color: white;
+		border: 1px solid #169BD5;
+		color: #169BD5;
 	}
 }
 
