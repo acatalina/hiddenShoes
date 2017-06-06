@@ -1,4 +1,5 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
+import { PropTypes } from 'prop-types';
 
 import logo from '../imgs/logo.png';
 import basket from '../imgs/basket.png';
@@ -28,6 +29,10 @@ const getCounter = (itemsCounter) => {
 			<span>{itemsCounter}</span>
 		</div>
 	);
+};
+
+Header.propTypes = {
+	itemsCounter: PropTypes.number.isRequired
 };
 
 export default Header;
