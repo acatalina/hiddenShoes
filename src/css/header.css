@@ -27,6 +27,7 @@ header h1 {
   margin: .5em 1em;
   order: 3;
   text-align: center;
+  width: 100%;
 }
 
 .header-basket-wrapper {
@@ -59,12 +60,13 @@ header h1 {
     width: 2em;
   }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 524px) {
   header { padding: 1.5em 1em; }
 
   header h1 {
     order: 2;
     text-align: left;
+    width: initial;
   }
 
   .header-basket { order: 3; }
