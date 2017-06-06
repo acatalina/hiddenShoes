@@ -10,13 +10,13 @@ const ProductCard = props => {
 	return (
 		<li className="product-card">
 			<div className="product-card-wrapper">
+				<Link className="product-link" to={`/shoes/${props.id}`} />
 				<div className="product-card-img-wrapper">
 					<img className="product-card-img"
 						src={`/imgs/${props.img}`}
 						alt={props.name} />
 				</div>
 				<div className="product-details">
-					<Link className="product-link" to={`/shoes/${props.id}`} />
 					<h2>{props.name}</h2>
 					<Price
 						wrapperClass="product-card-prices"
