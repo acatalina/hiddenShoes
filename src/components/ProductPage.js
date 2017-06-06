@@ -10,16 +10,17 @@ import ProductsList from './ProductsList'; // eslint-disable-line no-unused-vars
 const ProductPage = (props) => {
 	const { id } = props.match.params;
 	const { data } = props;
+	const product = findProductById(id, data);
 
 	return (
 		<section>
 			<div className="container">
 				<ProductBox
-					data={findProductById(id, data)} 
+					data={product} 
 					addProductToBasket={props.addProductToBasket} />
 				<LineThrough />
 				<h2>Related products</h2>
-				<ProductsList data={findRelatedProductsByColour(id, data)} />
+				<ProductsList data={findRelatedProductsByColour(product, data)} />
 			</div>
 		</section>
 	);
