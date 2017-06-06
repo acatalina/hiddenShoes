@@ -17,7 +17,7 @@ const Menu = (props) => {
 				<li><NavLink to="/">Kids Trainers</NavLink></li>
 				<li><NavLink className="nav-sale" to="/">SALE</NavLink></li>
 			</ul>
-			<div id="nav-ham" className={toggle} onClick={props.toggleMenu}>
+			<div id="nav-ham" onClick={props.toggleMenu}>
 				<span></span>
 				<span></span>
 				<span></span>

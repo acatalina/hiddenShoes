@@ -12,6 +12,8 @@
 }
 
   #nav-wrapper.open { transform: translateX(0); }
+  
+  #nav-wrapper.open #nav-ham { transform: translateX(0); }
 
 #nav-wrapper h1 { 
   font-size: 1em;
@@ -44,8 +46,6 @@
   transition: .2s all ease-in-out;
   cursor: pointer;
 }
-
-  #nav-ham.open { transform: translateX(0); }
 
 #nav-ham span {
   display: block;
