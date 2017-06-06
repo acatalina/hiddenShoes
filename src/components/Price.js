@@ -2,15 +2,29 @@ import React from 'react'; // eslint-disable-line no-unused-vars
 import { PropTypes } from 'prop-types'; // eslint-disable-line no-unused-vars
 
 const Price = props => {
+	const {were, price} = props;
+	const werePrice = `Were £${were}`;
+	let actualPrice = `£${price}`;
+
+	if (were) {
+		actualPrice = 'NOW ' + actualPrice;
+	}
+
+	function getWere(were) {
+		if (!were) return null;
+
+		return (
+			<span className={props.wereClass}>
+				{werePrice}
+			</span>
+		);
+	}
+
 	return (
 		<div className={props.wrapperClass}>
-			{props.were 
-				? <span className={props.wereClass || ''}>
-						Were £{props.were}
-					</span>
-					: null}
-			<span className={props.priceClass || ''} >
-				{props.were ? 'NOW ' : ''}£{props.price}
+			{getWere(were)}
+			<span className={props.priceClass} >
+				{actualPrice}
 			</span >
 		</div>
 	);
