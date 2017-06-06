@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 
 import ProductsList from './ProductsList'; // eslint-disable-line no-unused-vars
 import Filter from './Filter'; // eslint-disable-line no-unused-vars
+import Fade from './Fade'; // eslint-disable-line no-unused-vars
 import { filterByColour } from '../lib/helpers';
 
 class SalesPage extends Component {
@@ -16,17 +17,17 @@ class SalesPage extends Component {
 		this.setFilter = this.setFilter.bind(this);
 	}
 	render() {
-		const {data} = this.props;
-		const {filterBy} = this.state; 
+		const { data } = this.props;
+		const { filterBy } = this.state;
 
 		return (
-			<section>
+			<Fade component="section">
 				<div className="container">
 					<h1>SALE TRAINERS</h1>
 					<Filter setFilter={this.setFilter} />
 					<ProductsList data={filterByColour(data, filterBy)} />
 				</div>
-			</section>
+			</Fade>
 		);
 	}
 	setFilter(newColour, method) {

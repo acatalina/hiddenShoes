@@ -1,6 +1,8 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import { PropTypes } from 'prop-types';
 
+import Fade from './Fade'; // eslint-disable-line no-unused-vars
+
 const divStyle = {
 	position: 'absolute',
 	width: '100%',
@@ -24,9 +26,11 @@ const Modal = props => {
 	if (!props.isOpen) return null;
 
 	return (
-		<div onClick={props.close} style={divStyle}>
+		<Fade component="div"
+			onClick={props.close}
+			style={divStyle}>
 			<img style={imgStyle} src={props.img} alt={props.name} />
-		</div>
+		</Fade>
 	);
 };
 

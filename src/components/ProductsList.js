@@ -2,14 +2,16 @@ import React from 'react'; // eslint-disable-line no-unused-vars
 import { PropTypes } from 'prop-types';
 
 import ProductCard from './ProductCard'; // eslint-disable-line no-unused-vars
+import Fade from './Fade'; // eslint-disable-line no-unused-vars
 
 import '../css/productlist.css';
 
 const ProductsList = ({ data }) => {
 	return (
-		<ul className="product-list">
+		<Fade component="ul"
+			fadeClass="product-list">
 			{generateProducts(data)}
-		</ul>
+		</Fade>
 	);
 };
 
