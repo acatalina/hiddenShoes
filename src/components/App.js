@@ -16,21 +16,27 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			toggledMenu: false
+			toggledMenu: false,
+			basket: []
 		};
 
 		this.toggleMenu = this.toggleMenu.bind(this);
+		this.addProductToBasket = this.addProductToBasket.bind(this);
 	}
 	render() {
 		return (
 			<Router history={history}>
 				<main className="main-wrapper">
-					<Header />
+					<Header itemsCounter={this.state.basket.length} />
 					<div className="content-wrapper">
-						<Menu toggled={this.state.toggledMenu} toggleMenu={this.toggleMenu}/>
+						<Menu toggled={this.state.toggledMenu} toggleMenu={this.toggleMenu} />
 						<Switch>
-							<Route exact path="/" render={() => <SalesPage data={DATA} />} />
-							<Route path="/shoes/:id" render={() => <ProductPage data={DATA} />} />
+							<Route 
+								exact path="/" 
+								render={() => <SalesPage data={DATA} />} />
+							<Route 
+								path="/shoes/:id" 
+								render={() => <ProductPage data={DATA} addProductToBasket={this.addProductToBasket} />} />
 							<Redirect from="*" to="/" />
 						</Switch>
 					</div>
@@ -43,6 +49,13 @@ class App extends Component {
 			return {
 				toggledMenu: !prevState.toggledMenu
 			};
+		});
+	}
+	addProductToBasket(product) {
+		this.setState((prevState) => {
+			const newBasket = prevState.basket.slice().concat(product);
+
+			return { basket: newBasket };
 		});
 	}
 }

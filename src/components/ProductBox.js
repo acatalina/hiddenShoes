@@ -21,6 +21,7 @@ class ProductBox extends Component {
 		this.modalHandler = this.modalHandler.bind(this);
 		this.selectSize = this.selectSize.bind(this);
 		this.selectQuantity = this.selectQuantity.bind(this);
+		this.submitHandler = this.submitHandler.bind(this);
 	}
 	render() {
 		const { data } = this.props;
@@ -90,6 +91,19 @@ class ProductBox extends Component {
 	}
 	submitHandler(e) {
 		e.preventDefault();
+		
+		if (!this.state.sizeSelected || !this.state.quantitySelected) {
+			return alert('You must select size and quantity');
+		}
+		
+		const product = {
+			id: this.props.data.id,
+			name: this.props.data.name,
+			size: this.state.sizeSelected,
+			quantitySelected: this.state.quantitySelected
+		};
+
+		this.props.addProductToBasket(product);
 	}
 }
 
@@ -102,7 +116,8 @@ ProductBox.propTypes = {
 		were: PropTypes.number,
 		price: PropTypes.number.isRequired,
 		available: PropTypes.object.isRequired
-	})
+	}),
+	addProductToBasket: PropTypes.func.isRequired
 };
 
 export default ProductBox;

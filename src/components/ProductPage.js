@@ -15,7 +15,8 @@ const ProductPage = (props) => {
 		<section>
 			<div className="container">
 				<ProductBox
-					data={findProductById(id, data)} />
+					data={findProductById(id, data)} 
+					addProductToBasket={props.addProductToBasket} />
 				<LineThrough />
 				<h2>Related products</h2>
 				<ProductsList data={findRelatedProductsByColour(id, data)} />
@@ -30,7 +31,8 @@ ProductPage.propTypes = {
 		params: PropTypes.shape({
 			id: PropTypes.string.isRequired
 		})
-	})
+	}),
+	addProductToBasket: PropTypes.func.isRequired
 };
 
 export default withRouter(ProductPage);
