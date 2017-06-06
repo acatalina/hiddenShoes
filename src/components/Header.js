@@ -22,10 +22,12 @@ const Header = (props) => {
 };
 
 const getCounter = (itemsCounter) => {
-	if (!itemsCounter) return null;
+	let counterClass;
 
+	if (itemsCounter) counterClass = 'appear';
+	
 	return (
-		<div className="header-basket-counter">
+		<div id="header-basket-counter" className={counterClass}>
 			<span>{itemsCounter}</span>
 		</div>
 	);
