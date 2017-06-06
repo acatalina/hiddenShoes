@@ -13,10 +13,14 @@ class ProductBox extends Component {
 		super(props);
 
 		this.state = {
-			isModalOpen: false
+			isModalOpen: false,
+			sizeSelected: 0,
+			quantitySelected: 0
 		};
 
 		this.modalHandler = this.modalHandler.bind(this);
+		this.selectSize = this.selectSize.bind(this);
+		this.selectQuantity = this.selectQuantity.bind(this);
 	}
 	render() {
 		const { data } = this.props;
@@ -30,7 +34,7 @@ class ProductBox extends Component {
 							src={`/imgs/${data.img}`}
 							alt={data.name} />
 					</div>
-					<Modal 
+					<Modal
 						isOpen={this.state.isModalOpen}
 						close={this.modalHandler}
 						img={`/imgs/${data.img}`}
@@ -48,13 +52,13 @@ class ProductBox extends Component {
 							onSubmit={this.submitHandler}>
 							<SelectSize
 								stock={data.available}
-								selectSize={this.props.selectSize}
-								sizeSelected={this.props.sizeSelected} />
+								selectSize={this.selectSize}
+								sizeSelected={+this.state.sizeSelected} />
 							<SelectQuantity
 								stock={data.available}
-								sizeSelected={this.props.sizeSelected}
-								selectQuantity={this.props.selectQuantity}
-								quantitySelected={this.props.quantitySelected} />
+								sizeSelected={+this.state.sizeSelected}
+								selectQuantity={this.selectQuantity}
+								quantitySelected={+this.state.quantitySelected} />
 							<input type="submit" value="ADD TO BASKET" />
 						</form>
 					</div>
@@ -65,6 +69,23 @@ class ProductBox extends Component {
 	modalHandler() {
 		this.setState((prevState) => {
 			return { isModalOpen: !prevState.isModalOpen };
+		});
+	}
+	selectSize(e) {
+		const newSize = e.target.value;
+
+		this.setState(() => {
+			return {
+				sizeSelected: newSize,
+				quantitySelected: 0
+			};
+		});
+	}
+	selectQuantity(e) {
+		const newQuantity = e.target.value;
+
+		this.setState(() => {
+			return { quantitySelected: newQuantity };
 		});
 	}
 	submitHandler(e) {
@@ -81,11 +102,7 @@ ProductBox.propTypes = {
 		were: PropTypes.number,
 		price: PropTypes.number.isRequired,
 		available: PropTypes.object.isRequired
-	}),
-	selectSize: PropTypes.func.isRequired,
-	sizeSelected: PropTypes.number.isRequired,
-	selectQuantity: PropTypes.func.isRequired,
-	quantitySelected: PropTypes.number.isRequired
+	})
 };
 
 export default ProductBox;
