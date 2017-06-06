@@ -8,7 +8,7 @@ You can visit the end project [here](https://acatalina.github.io/hiddenshoes)
 
 ## Getting started
 
- If you rather want to dig in, please clone this repository (make sure you are in dev branch), execute ```npm install``` and, when is done, please ```npm run dev```. It should become available in your [localhost:9090](http://localhost:9090).
+ If you'd rather dig straight into the code, please clone this repository, execute ```npm install``` and, when is done, please ```npm run dev```. It should become available in your [localhost:9090](http://localhost:9090).
  
 ## Running the tests
 
