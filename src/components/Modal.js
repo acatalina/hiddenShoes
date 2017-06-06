@@ -8,7 +8,6 @@ const divStyle = {
 	left: '0',
 	bottom: '0',
 	background: 'rgba(51, 51, 51, 0.9)',
-	transition: '.2s all ease-in-out',
 	zIndex: '2',
 	display: 'flex',
 	justifyContent: 'center',
