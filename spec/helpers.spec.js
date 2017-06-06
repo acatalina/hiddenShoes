@@ -83,7 +83,7 @@ describe('Helpers', () => {
 				{id: 2, colours: ['black']}, 
 				{id: 3, colours: ['blue']}
 			];
-			const actual = helpers.findRelatedProductsByColour(1, array);
+			const actual = helpers.findRelatedProductsByColour(array[0], array);
 			const expected = [{id: 2, colours: ['black']}];
 
 			expect(actual).to.eql(expected);
@@ -95,7 +95,7 @@ describe('Helpers', () => {
 				{id: 2, colours: ['blue']}, 
 				{id: 3, colours: ['blue']}
 			];
-			const actual = helpers.findRelatedProductsByColour(1, array);
+			const actual = helpers.findRelatedProductsByColour(array[0], array);
 			const expected = [];
 
 			expect(actual).to.eql(expected);
