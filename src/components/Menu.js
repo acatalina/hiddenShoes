@@ -2,6 +2,8 @@ import React from 'react'; // eslint-disable-line no-unused-vars
 import { NavLink } from 'react-router-dom'; // eslint-disable-line no-unused-vars
 import { PropTypes } from 'prop-types';
 
+import menu from '../imgs/menu-button.svg';
+
 import '../css/menu.css';
 
 const Menu = (props) => {
@@ -18,9 +20,7 @@ const Menu = (props) => {
 				<li><NavLink className="nav-sale" to="/">SALE</NavLink></li>
 			</ul>
 			<div id="nav-ham" onClick={props.toggleMenu}>
-				<span></span>
-				<span></span>
-				<span></span>
+				<img src={menu} alt="Menu"/>
 			</div>
 		</nav>
 	);

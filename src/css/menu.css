@@ -13,7 +13,9 @@
 
   #nav-wrapper.open { transform: translateX(0); }
   
-  #nav-wrapper.open #nav-ham { transform: translateX(0); }
+  #nav-wrapper.open #nav-ham { 
+    transform: rotate(180deg);
+  }
 
 #nav-wrapper h1 { 
   font-size: 1em;
@@ -37,7 +39,7 @@
 .nav-sale { color: red; }
 
 #nav-ham {
-  width: 3.5em;
+  width: 3em;
   position: absolute;
   top: 0;
   right: 0;
@@ -47,13 +49,9 @@
   cursor: pointer;
 }
 
-#nav-ham span {
-  display: block;
-  margin-bottom: .3em;
-  height: .4em;
+#nav-ham img { 
   width: 100%;
-  background: grey;
-  border-radius: 1em;
+  vertical-align: middle;
 }
 
 @media (min-width: 1024px) {
@@ -62,7 +60,5 @@
     transform: translateX(0);
   }
 
-  #nav-ham {
-    display: none;
-  }
+  #nav-ham { display: none; }
 }
