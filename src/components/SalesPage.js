@@ -31,15 +31,15 @@ class SalesPage extends Component {
 	}
 	setFilter(newColour, method) {
 		if (method === 'add') {
-			this.setState((prevState) => {
-				let newFilter = prevState.filterBy.slice();
+			this.setState(({ filterBy }) => {
+				let newFilter = filterBy.slice();
 				newFilter.push(newColour);
 
 				return { filterBy: newFilter };
 			});
 		} else {
-			this.setState((prevState) => {
-				let newFilter = prevState.filterBy.filter(colour => newColour !== colour);
+			this.setState(({ filterBy }) => {
+				let newFilter = filterBy.filter(colour => newColour !== colour);
 
 				return { filterBy: newFilter };
 			});
