@@ -101,21 +101,23 @@ const shoes = [
 	}
 ];
 
+const available = {
+	'4.5': 8,
+	5: 8,
+	'5.5': 8,
+	6: 8,
+	7: 8,
+	8: 8,
+	9: 8,
+	10: 8,
+	11: 8,
+	12: 8,
+	13: 8,
+	14: 8
+};
+
 shoes.forEach(shoe => {
-	shoe.available = {
-		'4.5': 8,
-		5: 8,
-		'5.5': 8,
-		6: 8,
-		7: 8,
-		8: 8,
-		9: 8,
-		10: 8,
-		11: 8,
-		12: 8,
-		13: 8,
-		14: 8
-	};
+	Object.assign(shoe.available, available);
 });
 
 export default shoes;
