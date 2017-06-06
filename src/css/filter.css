@@ -1,26 +1,26 @@
 .filter-list {
-  list-style: none;
-  padding: .5em 1em;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background-color: #f3f3f3;
-  border: .05em solid #333;
+	align-items: center;
+	background-color: #f3f3f3;
+	border: .05em solid #333;
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: .5em 1em;
 }
 
 .filter-list li {
-  width: 50%;
+	width: 50%;
 }
 
 @media (min-width: 472px) {
-  .filter-list li {
-    width: initial;
-    margin-right: 2em;
-  }
+	.filter-list li {
+		margin-right: 2em;
+		width: initial;
+	}
 }
 
 @media (min-width: 768px) {
-  .filter-list li {
-    margin-right: 3em;
-  }
+	.filter-list li {
+		margin-right: 3em;
+	}
 }

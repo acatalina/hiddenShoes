@@ -1,11 +1,11 @@
 .product-list {
-  padding: 0;
-  display: flex;
-  flex-flow: row wrap;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 0;
 }
 
 @media (min-width: 472px) {
-  .product-list {
-    margin: 0 -1em;
-  }
+	.product-list {
+		margin: 0 -1em;
+	}
 }
